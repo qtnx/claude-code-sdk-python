@@ -192,8 +192,8 @@ class SubprocessCLITransport(Transport):
                         data = json.loads(line_str)
                         yield data
                     except json.JSONDecodeError as e:
-                        if line_str.startswith("{") or line_str.startswith("["):
-                            raise SDKJSONDecodeError(line_str, e) from e
+                        #if line_str.startswith("{") or line_str.startswith("["):
+                        #    raise SDKJSONDecodeError(line_str, e) from e
                         continue
 
             except anyio.ClosedResourceError:
